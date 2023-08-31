@@ -37,16 +37,3 @@ jobs:
         docker tag ankitac7/sample-app-aoai-chatgpt:$(date +'%Y-%m-%d')_$GITHUB_RUN_NUMBER ankitac7/sample-app-aoai-chatgpt:latest;
         docker push ankitac7/sample-app-aoai-chatgpt:$(date +'%Y-%m-%d')_$GITHUB_RUN_NUMBER;
         docker push ankitac7/sample-app-aoai-chatgpt:latest;
-  
-  build-and-deploy:
-    runs-on: ubuntu-latest
-    steps:
-    # checkout the repo
-    - name: 'Checkout Github Action' 
-      uses: actions/checkout@main
-
-    - name: 'Run Azure webapp deploy action using publish profile credentials'
-      uses: azure/webapps-deploy@v2
-      with:
-        app-name: aceknowledgesearch
-        publish-profile: ${{ secrets.azureWebAppPublishProfile }}    
