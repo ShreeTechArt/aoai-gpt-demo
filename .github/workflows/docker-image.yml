@@ -13,11 +13,11 @@ jobs:
 
     steps:
     - name: Log in to Docker Hub
-        uses: ./
-        with:
-          registry: ghcr.io
-          username: ${{ secrets.DOCKER_USERNAME }}
-          password: ${{ secrets.DOCKER_PASSWORD }}
+      uses: ./
+      with:
+        registry: ghcr.io
+        username: ${{ secrets.DOCKER_USERNAME }}
+        password: ${{ secrets.DOCKER_PASSWORD }}
     # - name: Azure Container Registry Login
     #   uses: Azure/docker-login@v1
     #   with:
