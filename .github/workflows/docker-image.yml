@@ -8,16 +8,13 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
-    steps:
-    - name: Azure Container Registry Login
-      uses: Azure/docker-login@v1
-      with:
-        # Container registry username
-        username: ${{ secrets.ACR_USERNAME }}
-        # Container registry password
-        password: ${{ secrets.ACR_PASSWORD }}
-        # Container registry server url
-        login-server: ${{ secrets.ACR_LOGIN_SERVER }}        
+    - uses: actions/checkout@v2
+    - name: docker login
+      env:
+        DOCKER_USER: ${{secrets.DOCKER_USERNAME}}
+        DOCKER_PASSWORD: ${{secrets.DOCKER_PASSWORD}}
+      run: |
+        docker login -u $DOCKER_USER -p $DOCKER_PASSWORD  
     - uses: actions/checkout@v3
     - name: Build the Docker image
       run:         
@@ -26,7 +23,7 @@ jobs:
         docker push fruoccopublic.azurecr.io/sample-app-aoai-chatgpt:$(date +'%Y-%m-%d')_$GITHUB_RUN_NUMBER;
         docker push fruoccopublic.azurecr.io/sample-app-aoai-chatgpt:latest;
   
-  deploy:
+  build-and-deploy:
     runs-on: ubuntu-latest
     steps:
     # checkout the repo
