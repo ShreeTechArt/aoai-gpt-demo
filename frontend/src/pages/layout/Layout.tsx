@@ -73,13 +73,13 @@ const Layout = () => {
                 // className={styles.headerContainer}
                 >
                     <Stack horizontal verticalAlign="center">
-                        {/* <img
+                        { <img
                             src={MetLifeLogo}
                             className={styles.headerIcon}
                             aria-hidden="true"
-                        /> */}
+                        /> }
                         <Link to="/" className={styles.headerTitleContainer}>
-                            <h1 className={styles.headerTitle}>Azure Open AI Demo</h1>
+                            <h1 className={styles.headerTitle}>Proof of Concept - Azure Open AI</h1>
                         </Link>
                     </Stack>
                     {/* <Stack horizontal tokens={{ childrenGap: 4 }}>

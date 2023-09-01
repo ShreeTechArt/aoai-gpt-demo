@@ -664,7 +664,7 @@ const Chat = () => {
                                 conversationId={appStateContext?.state.currentChat?.id ? appStateContext?.state.currentChat?.id : undefined}
                             />
                         </Stack>
-                        <div className={styles.chatEmptyStateSubtitle}>Questions? Contact Hemant Patil (Enterprise Cloud Enablement), Asheesh Chowdhary (Enterprise Cloud Enablement) or Arun Balaraman</div>
+                        <div className={styles.chatEmptyStateSubtitle2}>Questions? Contact Hemant Patil (Enterprise Cloud Enablement), Asheesh Chowdhary (Enterprise Cloud Enablement) or Arun Balaraman</div>
 
                     </div>
                     {messages && messages.length > 0 && isCitationPanelOpen && activeCitation && (

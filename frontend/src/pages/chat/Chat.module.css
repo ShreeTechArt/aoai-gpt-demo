@@ -60,6 +60,20 @@
     color: #616161;
 }
 
+.chatEmptyStateSubtitle2 {
+    margin-top: 20px;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 150%;
+    display: flex;
+    align-items: flex-end;
+    text-align: center;
+    letter-spacing: -0.01em;
+    color: #616161;
+    padding: 10px;
+}
+
 .chatIcon {
     height: 80px;
     width: auto;
